@@ -9,21 +9,9 @@ public class Etudiant extends Personne {
 	
 	public Etudiant() {
 		super();
-        Scanner scan = new Scanner (System.in);
-		System.out.print("Veuillez introduire son matricule ");
-		this.matricule = scan.next();	
-		System.out.print("l'etudiant  "+this.prenom+" "+this.nom+" possède combien de notes ");
-        int nbre = scan.nextInt();
-
-        notes = new double[nbre];
-        
-        int i = 0;
-
-        while(i != notes.length){
-            System.out.print("Entrer la note numero "+(i+1)+" : ");
-            notes[i] = scan.nextDouble();
-            i++;
-        }
+        Saisie get = new Saisie();
+		this.matricule = get.SaiseMatricule();	
+		this.notes = get.SaisieNotes(this.nom, this.prenom);
         this.moyenne = calculMoyenne();
 	}
 

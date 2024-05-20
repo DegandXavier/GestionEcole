@@ -1,19 +1,16 @@
 package Personne;
 
-import java.util.Scanner;
-
 public class Personne {
 	protected String nom, prenom;
 	protected int age;
 	
 	public Personne() {
-		Scanner scan  =new Scanner(System.in);
-		System.out.print("Entrer le nom de la personne ");
-	    this.nom = scan.next();
-	    System.out.print("Entrer le prenom de la personne ");
-        this.prenom = scan.next();
-        System.out.print("Entrer son âge ");
-        this.age = scan.nextInt();
+		Saisie get = new Saisie();
+	    this.nom = get.SaiseNom();
+	    
+        this.prenom = get.SaisePrenom();
+        
+        this.age = get.SaisieAge();
 	}
 
 	public String getNom() {
