@@ -10,7 +10,7 @@ public class Classe {
 	public Classe() {
 		Saisie get = new Saisie();
 		this.nomClasse = get.SaiseNomClasse();
-		classe = get.SaisieEleves();
+		this.classe = get.SaisieEleves();
 	}
 	public void afficherLaclasse(){
 		System.out.println("La classe "+this.nomClasse+" est composée de ");
