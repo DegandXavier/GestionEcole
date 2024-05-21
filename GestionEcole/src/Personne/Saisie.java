@@ -8,6 +8,10 @@ public class Saisie {
 		System.out.print("Entrer le nom de la personne ");
 	    return  scan.next();		
 	}
+	public String SaiseNomClasse() {
+		System.out.print("Entrer le nom de la classe ");
+	    return  scan.next();		
+	}
 	public String SaisePrenom() {
 		System.out.print("Entrer le prénom de la personne ");
 	    return  scan.next();		
@@ -34,5 +38,15 @@ public class Saisie {
             i++;
         }
 		return notes;
+	}
+	public Etudiant[] SaisieEleves() {
+		System.out.println("Saisir le nombre d'élèves pour cette classe : ");
+		int nbEtudiant  = scan.nextInt();
+		Etudiant[] classe = new Etudiant[nbEtudiant];
+        //this.classe = new Etudiant[nbEtudiant];
+        for(int i = 0; i < classe.length; i++ ){
+            classe[i] = new Etudiant();
+        }
+        return classe;
 	}
 }
