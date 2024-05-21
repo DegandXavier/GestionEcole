@@ -46,12 +46,12 @@ public class Etudiant extends Personne {
 		}
 		return somme/notes.length;
 	}
-	@Override
-	public String toString() {
-		return "Etudiant : "+super.toString();
-	}
+
+	/*
+	 * @Override public String toString() { return "Etudiant : "+super.toString(); }
+	 */
 	public void affchierUnEtudaint() {
-		toString();
+		System.out.println("Données élèves : "+"\n"+super.toString());
 		System.out.println("son matricule est : "+getMatricule());
 		System.out.print("Ses notes sont :");
 		for(double valeursNotes : notes) {

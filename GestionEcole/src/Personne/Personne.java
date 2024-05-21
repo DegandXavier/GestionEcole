@@ -6,10 +6,8 @@ public class Personne {
 	
 	public Personne() {
 		Saisie get = new Saisie();
-	    this.nom = get.SaiseNom();
-	    
-        this.prenom = get.SaisePrenom();
-        
+	    this.nom = get.SaiseNom();	    
+        this.prenom = get.SaisePrenom();        
         this.age = get.SaisieAge();
 	}
 
