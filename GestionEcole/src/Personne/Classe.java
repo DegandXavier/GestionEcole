@@ -1,4 +1,5 @@
 package Personne;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Classe {
@@ -22,8 +23,25 @@ public class Classe {
 	public void afficherLaclasse(){
 		System.out.println("La classe "+this.nomClasse+" est composée de ");
         for(Etudiant eleve : classe){
-            eleve.affchierUnEtudaint();
-            System.out.println(eleve.getNom());
+            eleve.affchierUnEtudaint();            
         }
     }
+	public void trier() {
+		 Etudiant tempo;
+         int i = 0;
+         int j = 0;
+         while(i != classe.length){
+             j = i + 1;
+             while(j != classe.length){
+                if((classe[i] != null) && classe[i].getMoyenne() > classe[j].getMoyenne()){
+                    tempo = classe[i];
+                    classe[i] = classe[j];
+                    classe[j] = tempo;
+                }
+                 j= j + 1;
+             }
+            i++;
+         }
+     }
+	
 }

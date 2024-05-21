@@ -1,5 +1,6 @@
 package Personne;
 import java.util.Scanner;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 public class Etudiant extends Personne {
@@ -47,18 +48,19 @@ public class Etudiant extends Personne {
 		return somme/notes.length;
 	}
 
-	/*
-	 * @Override public String toString() { return "Etudiant : "+super.toString(); }
-	 */
 	public void affchierUnEtudaint() {
-		System.out.println("Données élèves : "+"\n"+super.toString());
+		DecimalFormat formatage = new DecimalFormat();
+		formatage.setMaximumIntegerDigits(2);
+		System.out.println("Données élève : "+"\n"+super.toString());
 		System.out.println("son matricule est : "+getMatricule());
 		System.out.print("Ses notes sont :");
+		String lesNotes = " ";
 		for(double valeursNotes : notes) {
-			System.out.print(" "+valeursNotes+ " - ");
+			lesNotes = lesNotes+" - "+valeursNotes;			
 		}
+		System.out.print(lesNotes.substring(3));
 		System.out.println();
-		System.out.println("Sa moyenne est de : "+getMoyenne());
+		System.out.println("Sa moyenne est de : "+formatage.format(getMoyenne()));
 		
 	}
 
