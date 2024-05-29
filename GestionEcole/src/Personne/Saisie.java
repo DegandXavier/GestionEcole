@@ -1,6 +1,10 @@
 package Personne;
+
 import java.util.Scanner;
 
+/**
+ * @author xavier
+ */
 public class Saisie {
 	Scanner scan = new Scanner(System.in);
 	
