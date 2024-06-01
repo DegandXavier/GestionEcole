@@ -6,9 +6,9 @@ public class Personne {
 	
 	public Personne() {
 		Saisie get = new Saisie();
-	    this.nom = get.SaiseNom();	    
-        this.prenom = get.SaisePrenom();        
-        this.age = get.SaisieAge();
+	    this.nom = get.SaiseTexte("nom");	    
+        this.prenom = get.SaiseTexte("prénom");        
+        this.age = get.SaisirEntier(" son âge :");
 	}
 
 	public String getNom() {

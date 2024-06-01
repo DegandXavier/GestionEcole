@@ -11,7 +11,7 @@ public class Etudiant extends Personne {
 	public Etudiant() {
 		super();
         Saisie get = new Saisie();
-		this.matricule = get.SaiseMatricule();	
+		this.matricule = get.SaiseTexte("numéro de matricule");	
 		this.notes = get.SaisieNotes(this.nom, this.prenom);
         this.moyenne = calculMoyenne();
 	}

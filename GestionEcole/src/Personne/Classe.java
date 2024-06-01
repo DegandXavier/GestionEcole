@@ -9,7 +9,7 @@ public class Classe {
 	 */
 	public Classe() {
 		Saisie get = new Saisie();
-		this.nomClasse = get.SaiseNomClasse();
+		this.nomClasse = get.SaiseTexte("nom de la classe ");
 		this.classe = get.SaisieEleves();
 	}
 	public void afficherLaclasse(){
