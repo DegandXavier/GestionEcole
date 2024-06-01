@@ -27,7 +27,7 @@ On constate que dans la classe Saisie, il y a 4 méthodes de type String.
 - Une pour la saisie du nom de la classe.
 - Et une pour le matricule.
 #### *Pour cette étape, je vous demande d'utiliser une seule méthode de saisie. Les libellés à afficher pour l'utilisateur seront passés par paramètre de type String à la nouvelle méthode. Le return de cette méthode sera du type String.*
-## 4. Gestion des exceptionss.
+## 4. Gestion des exceptions.
 Le rôle de la gestion des exceptions est d'anticiper les risques de blogage ou de fermeture prématurée de l'application.
 Sur base du cours, vue en classe, veuillez inmplémenter les exceptions dans votre code.
 Tenir compte de la javadoc pour les méthodes de la classe java et si nécessaire déclencher une exception pour un risque particulier.
