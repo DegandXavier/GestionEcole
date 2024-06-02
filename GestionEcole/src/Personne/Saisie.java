@@ -43,7 +43,8 @@ public class Saisie {
 	/**
 	 * Méthode de type integer pour saisir des données numérique de type entier
 	 * La saisie est liée à un boucle pour permettre à l'utilisateur d'encoder correctement la donnée demandée
-	 * @return
+	 * @libelle complément d'inforamtion pour le message de saisie.
+	 * @return Integer
 	 */
 	public int SaisirEntier(String libelle) {		
 		System.out.print("Veuillez sasir "+libelle+" : ");			
@@ -52,13 +53,19 @@ public class Saisie {
 		int intValue = 0;
 		while (!valid) {
 			try {
+				/**
+				 * Lors de l'utilisation pour la récupération de type précis comme int, float, double, ...ces méthodes ne lisent pas le dernier retour à la ligne.
+				 * cela peut causer des problèmes pour les saisies suivantes.
+				 * Pour éviter cela, faire un scan.nextLine() lit le dernier retour à la ligne laissé par nextInt().
+				 * Ou alors utiliser le code suivant :
+				 */
 				strtValue = scan.nextLine();
 				intValue = Integer.parseInt(strtValue);
 				valid = true;
 			} 
 			catch (NumberFormatException e) {
-				System.out.println("Saisir un entier erreur !");				
-			}
+			  System.out.println("Erreur veuillez saisir un nombre entier !"); 
+			  }
 			catch (NoSuchElementException e) {
 				System.out.println("Saisir un entier, aucune donnée trouvée !");				
 			}
@@ -81,17 +88,18 @@ public class Saisie {
 		while (!loop) {										
 			try {				
 				result = scan.nextDouble();
+				vider();
 				loop = true;				
 			}
 			catch(InputMismatchException e) {		
-				//vider();
-				System.out.println("Erreur ! Veuillez introduire un nombre !");
+				vider();
+				System.out.println("Erreur saisie double! Veuillez introduire un nombre !");
 			}		
 			catch (NoSuchElementException e) {
-				//vider();
+				vider();
 				System.out.println("Erreur, Aucune ligne n'a été trouvée");
 			}catch(IllegalStateException e) {
-				//vider();
+				vider();
 				System.out.println("Erreur, le Scanner est fermé");
 			}
 		}
@@ -141,10 +149,17 @@ public class Saisie {
 	 * cette méthode se contentera de faire un retour à la ligne et la variable String sera vide.
 	 * D'où l'utilité de vider le scanner (par un retour à la ligne) avec <nomduScanner>.nextLine(); après avoir scanné un nombre
 	 */
-	/*
-	 * public void vider(){ try { scan.nextLine(); } catch (NoSuchElementException
-	 * e) { vider(); System.out.println("Erreur, Aucune ligne n'a été trouvée");
-	 * }catch(IllegalStateException e) { vider();
-	 * System.out.println("Erreur, le Scanner est fermé"); } }
-	 */
-}
+	
+	public void vider(){
+		try { 
+			scan.nextLine(); 
+		}
+		catch (NoSuchElementException e) {
+			vider(); 
+			System.out.println("Erreur, Aucune ligne n'a été trouvée");
+		}
+		catch(IllegalStateException e) 
+		{ 	vider();
+			System.out.println("Erreur, le Scanner est fermé"); } }
+	 
+	}
